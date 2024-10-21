@@ -1,0 +1,25 @@
+import http.client
+
+print("-------------------------")
+print("| RILEVATORE VERBI HTTP |")
+print("-------------------------")
+
+host = input("Inserire indirizzo IP bersaglio: \n")
+port = input("Inserire porta da controllare (default: 80) \n")
+
+if port == "":
+
+    port = 80
+
+try:
+
+    connection = http.client.HTTPConnection(host, port)
+    connection.request('OPTIONS', '/')
+    response = connection.getresponse
+
+    print("I metodi abilitati sono", response.status)
+    connection.close
+
+except ConnectionRefusedError:
+
+    print("Connessione Fallita.")
