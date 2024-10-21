@@ -1,7 +1,5 @@
 
 import socket
-import re
-import sys
 
 print ("-------------------------- \n")
 print ("|      Port Scanner      | \n")
