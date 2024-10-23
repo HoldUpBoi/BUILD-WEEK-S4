@@ -1,9 +1,14 @@
 
 import socket
 
-print ("-------------------------- \n")
-print ("|      Port Scanner      | \n")
-print ("-------------------------- \n \n")
+print("""
+__________              __      _________                     
+\______   \____________/  |_   /   _____/ ____ _____    ____  
+ |     ___/  _ \_  __ \   __\  \_____  \_/ ___\\__  \  /    \ 
+ |    |  (  <_> )  | \/|  |    /        \  \___ / __ \|   |  \
+ |____|   \____/|__|   |__|   /_______  /\___  >____  /___|  /
+                                      \/     \/     \/     \/ 
+""")
 
 target = input("Inserire l'indirizzo IP da scannerizzare: \n")
 portRange = input("Inserire il range di porte da controllare: \n (Esempio 5-200) \n")
