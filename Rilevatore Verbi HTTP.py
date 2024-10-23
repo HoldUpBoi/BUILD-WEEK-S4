@@ -8,11 +8,12 @@ print ("""
 |    \  |  | |     ||   [_|  :  ||  _  |  |  |  |     ||    \ |   [_     |  |  |  |  |    |  |  |  |   
 |  .  \ |  | |     ||     |\   / |  |  |  |  |  |     ||  .  \|     |    |  |  |  |  |    |  |  |  |   
 |__|\_||____||_____||_____| \_/  |__|__|  |__|   \___/ |__|\_||_____|    |__|__|  |__|    |__|  |__|   
+
                                                                                                        
 """)
 
 host = input("Inserire indirizzo IP bersaglio: \n")
-port = input("Inserire porta da controllare (default: 80) \n")
+port = int(input("Inserire porta da controllare (default: 80) \n"))
 
 if port == "":
 
@@ -22,10 +23,10 @@ try:
 
     connection = http.client.HTTPConnection(host, port)
     connection.request('OPTIONS', '/')
-    response = connection.getresponse
+    response = connection.getresponse()
 
-    print("I metodi abilitati sono", response.status)
-    connection.close
+    print("I metodi abilitati sono", response.getheader('allow'))
+    connection.close()
 
 except ConnectionRefusedError:
 
