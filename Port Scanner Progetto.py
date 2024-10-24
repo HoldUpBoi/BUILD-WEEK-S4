@@ -14,7 +14,7 @@ target = input("Inserire l'indirizzo IP da scannerizzare: \n")
 portRange = input("Inserire il range di porte da controllare: \n (Esempio 5-200) \n")
     
 lowport = int(portRange.split('-')[0])
-highport = int(portRange.split('-')[1])
+highport = 1 + int(portRange.split('-')[1])
 
 print ("Scannerizzando IP: ", target, " dalla porta ", lowport, " alla porta ", highport)
 
